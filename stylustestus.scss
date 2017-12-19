@@ -1,0 +1,449 @@
+body {
+	//background: orange;
+	//background: deepskyblue;
+	background: #ddd;
+}
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+	min-height: 100vh;
+}
+
+.wrapper > * {
+  flex: 1 100%;
+}
+
+.header {
+ 	background: #929292;
+//	display: none;
+	position: fixed;
+	width: 100%;
+	height: 55px;
+	top: 0;
+	left: 0;
+}
+
+/* Styles til tabs */
+#tabs {
+    padding-bottom: 3px;
+    margin: 0;
+	margin-top: 40px;
+	li {
+		margin: auto;
+    	padding: 0;
+    	list-style: none;
+    	display: inline;
+   		font-family: arial, sans-serif;
+   	 	font-size: 150%;
+	}
+	a {
+		float: center;
+    	line-height: 14px;
+    	font-weight: bold;
+    	margin: 100px 10px 14px 10px;
+    	text-decoration: none;
+    	padding: 2px 8px 3px 8x;
+    	font-size: 150%;
+    	color: black;
+	}
+	a:hover {
+		color: white;
+	}
+	a.selected {
+		color: white;
+    	border-bottom: none;
+    	padding-bottom: 4px;
+	}
+}
+
+
+.logo {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 90px;
+	max-width: 110px;
+	min-height: 30px;
+	max-height: 50px;
+}
+
+.footer {
+  background: lightblue;
+	padding: 10px;
+	width: 100%;
+	order: 4;
+	margin-bottom: 0;
+	
+}
+
+/*.main {
+  text-align: left;
+  background: deepskyblue;
+}*/
+
+.aside-1 {
+  background: #ddd;
+	margin-top: 2.5em;
+	font-size: 1.5em;
+	padding: 1em;
+	
+	
+}
+
+.aside-2 {
+  background: #ddd;
+}
+
+
+.aside-3 {
+	//margin: auto;
+  background: #green;
+}
+
+
+.aside-4 {
+  background: #dd;
+	//min-height: 20vh;
+}
+
+
+.signup {
+	padding: 1em;
+	background: #ddd;
+}
+
+.appbillede {
+	width: 200px;
+	heiht: 80px;
+}
+
+
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.form-control {
+	margin-bottom: 10px;
+ position: relative;
+  z-index: 2;/*	
+  float: right;
+  //width: 100%;
+  margin-bottom: 10px;
+	margin-top: 5px;*/
+}
+
+//welcome.php
+
+.billeder {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+.spilbillede {
+	width: 25%;
+	height: 20%;
+}
+
+.spilbillede2 {
+	width: 50%;
+	height: 40%;
+}
+//Events.php
+	.wrapper-2 {
+  display: flex;  
+  flex-flow: column wrap;
+  font-weight: bold;
+  text-align: center;
+		min-height: 100vh;
+}
+
+.box {
+	box-shadow: 10px 10px 50px grey;
+	margin: auto;
+	//margin-top: 2.5em;
+	//height: 200px;
+	width: 90%;
+	outline: solid black 2px;
+	margin-top: 30px;
+}
+
+.box-1 {
+	margin-top: 100px;
+		background: #929292;
+		display: flex;
+	flex-flow: column-reverse wrap;
+	//box-shadow: 10
+}
+
+.box-2 {
+	background: #929292;
+	display: flex;
+	flex-flow: column-reverse wrap;
+}
+
+.pics {
+	width: 100px;
+	height: 125px;
+	margin-top: 10px;
+}
+
+//event1.php
+
+.eventtekst {
+	font-size: 26px;
+	line-height: 150%;
+//	color: red;
+}
+
+.eventtekst2 {
+	font-size: 20px;
+	line-height: 150%;
+	a:hover {
+		color: red;
+	}
+	a:visited {
+		color: black;
+	}
+	a:link {
+		color: black;
+	}
+	a:active {
+		color: red;
+	}
+}
+	.aside-5 {
+	order: 2;
+	background: #ddd;
+	width: 50px;
+	//	margin-top: 100px;
+	//height: 150px;	
+}
+
+.aside-6 {
+	order: 1;
+	background: #ddd;
+	margin-top: 50px;
+	//margin-top: -200px;
+	display: flex;
+	flex-flow: column wrap;
+}
+
+.profilbillede {
+	height: 130px;
+		width: 100px;
+}
+
+#kage {
+	height: 500px;
+	width: 700px;
+}
+
+@media all and (min-width: 760px) {
+  .aside {
+	  flex: 1 auto;
+	  margin-top: 100px;
+	}
+	
+	.aside-1 {
+		width: 38%;
+	}
+		.appbillede {
+		width: 200px;
+		height: 66px;
+	}
+
+.box {
+	margin: auto;
+	//margin-top: 2.5em;
+	height: 200px;
+	width: 70%;
+	outline: solid black 2px;
+	margin-top: 30px;
+}
+
+.box-1 {
+	margin-top: 100px;
+	background: #929292;
+	display: flex;
+	
+}
+
+.box-2 {
+	background: #929292;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.info-2{
+	background: #929292;
+	height: 100%;
+	width: 70%;
+}
+
+.pic-2{
+	background: #929292;
+	margin: auto;
+	height: 50%;
+	width: 25%;
+}
+
+
+.info-2 .pic-2{
+	margin: auto;
+}
+	
+	.pics {
+	width: 150px;
+	height: 175px;
+	border: solid black 2px;
+	margin-top: -37.5px;
+		
+}
+	
+		.aside-5 {
+	order: 1;
+	background: #ddd;
+	width: 70%;
+			margin-top: 50px;
+	//height: 150px;	
+}
+
+.aside-6 {
+	order: 2;
+	background: #ddd;
+	display: flex;
+	margin-top: 50px;
+	flex-flow: column wrap;
+	}
+	
+	.profilbillede {
+		width: 80px;
+			height: 110px;
+	}
+}
+
+@media all and (min-width: 1100px) {
+	 // .aside { flex: 1 auto; }
+ // .aside-1 { order: 1; } 
+  //.aside-2 { order: 2; }
+  //.footer  { order: 3; }
+	
+	//Events.php
+	.aside {
+		margin-top: 100px;
+	}
+	
+	.aside-1 {
+		width: 38%;
+	}
+	
+	.aside-3 {
+		margin-top: 100px;
+		padding: 10px;
+		width: 100%;
+		background: green;
+	}
+	.header {
+			min-height: 110px;
+	max-height: 110px;
+	}
+	
+	.logo {
+			min-width: 170px;
+	max-width: 200px;
+	min-height: 100px;
+	max-height: 140px;
+	}
+	
+	.appbillede {
+		width: 300px;
+		height: 100px;
+	}
+	
+.box {
+	margin: auto;
+	//margin-top: 2.5em;
+	height: 200px;
+	width: 70%;
+	outline: solid black 2px;
+	margin-top: 30px;
+}
+
+.box-1 {
+	margin-top: 130px;
+	background: #929292;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.box-2 {
+	background: #929292;
+	display: flex;
+	flex-flow: row wrap;
+}
+/*	
+	.info-1 {
+		background: red;
+		height: 100%;
+		width: 70%;
+	}
+	
+	.pic-1  {
+		background: orange;
+		margin: auto;	
+		height: 50%;
+			width: 25%;
+	}*/
+
+.info-2{
+	background: #929292;
+	height: 100%;
+	width: 70%;
+}
+
+.pic-2{
+	background: #929292;
+	//margin: auto -20px auto auto;
+	margin: auto;
+	height: 50%;
+	width: 25%;
+}
+
+
+.info-2 .pic-2 {
+	margin: auto;
+}
+	
+	.pics {
+	width: 150px;
+	height: 175px;
+	border: solid black 2px;
+	margin-top: -37.5px;
+}
+	//event1.php
+
+.aside-5 {
+	orer: 1;
+	background: #ddd;
+	width: 70%;
+	margin-top: 100px;
+	//height: 150px;	
+}
+
+.aside-6 {
+	order: 2;
+	background: #ddd;
+	margin-top: 100px;
+}
+
+	.profilbillede{
+		width: 150px;
+		height: 175px;
+	}
+}
