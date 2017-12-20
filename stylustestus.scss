@@ -1,7 +1,12 @@
+// Variable
+$baggrund: #ddd; //Grå baggrundsfarve
+$menu: #929292; //Mørkegrå til menu og events
+$top: 100px; //Margin-top på visse sider
+$footer: lightblue; //Footer farve
+$velkomst: green; //Velkomst box farve
+
 body {
-	//background: orange;
-	//background: deepskyblue;
-	background: #ddd;
+	background: $baggrund;
 }
 .wrapper {
   display: flex;  
@@ -16,8 +21,7 @@ body {
 }
 
 .header {
- 	background: #929292;
-//	display: none;
+ 	background: $menu;
 	position: fixed;
 	width: 100%;
 	height: 55px;
@@ -29,14 +33,14 @@ body {
 #tabs {
     padding-bottom: 3px;
     margin: 0;
-	margin-top: 40px;
+	margin-top: 15px;
+	
 	li {
 		margin: auto;
     	padding: 0;
     	list-style: none;
     	display: inline;
-   		font-family: arial, sans-serif;
-   	 	font-size: 150%;
+   		font-family: arial, sans-serif;	
 	}
 	a {
 		float: center;
@@ -47,17 +51,16 @@ body {
     	padding: 2px 8px 3px 8x;
     	font-size: 150%;
     	color: black;
-	}
-	a:hover {
-		color: white;
-	}
-	a.selected {
-		color: white;
+		&:hover {
+			color: white;
+		}
+		&.selected {
+					color: white;
     	border-bottom: none;
     	padding-bottom: 4px;
+		}
 	}
 }
-
 
 .logo {
 	position: fixed;
@@ -70,7 +73,7 @@ body {
 }
 
 .footer {
-  background: lightblue;
+  background: $footer;
 	padding: 10px;
 	width: 100%;
 	order: 4;
@@ -78,13 +81,18 @@ body {
 	
 }
 
-/*.main {
-  text-align: left;
-  background: deepskyblue;
-}*/
+.footerbillede {
+	width: 150px;
+	height: 125px;
+	
+}
+
+.opmeddig {
+	margin-top: -20px;
+}
 
 .aside-1 {
-  background: #ddd;
+  background: $baggrund;
 	margin-top: 2.5em;
 	font-size: 1.5em;
 	padding: 1em;
@@ -93,25 +101,23 @@ body {
 }
 
 .aside-2 {
-  background: #ddd;
+  background: $baggrund;
 }
 
 
 .aside-3 {
-	//margin: auto;
-  background: #green;
+  background: $velkomst;
 }
 
 
 .aside-4 {
-  background: #dd;
-	//min-height: 20vh;
+  background: $baggrund;
 }
 
 
 .signup {
 	padding: 1em;
-	background: #ddd;
+	background: $baggrund;
 }
 
 .appbillede {
@@ -130,11 +136,8 @@ body {
 .form-control {
 	margin-bottom: 10px;
  position: relative;
-  z-index: 2;/*	
-  float: right;
-  //width: 100%;
-  margin-bottom: 10px;
-	margin-top: 5px;*/
+  z-index: 2;
+
 }
 
 //welcome.php
@@ -166,23 +169,20 @@ body {
 .box {
 	box-shadow: 10px 10px 50px grey;
 	margin: auto;
-	//margin-top: 2.5em;
-	//height: 200px;
 	width: 90%;
 	outline: solid black 2px;
 	margin-top: 30px;
 }
 
 .box-1 {
-	margin-top: 100px;
-		background: #929292;
+	margin-top: $top;
+		background: $menu;
 		display: flex;
 	flex-flow: column-reverse wrap;
-	//box-shadow: 10
 }
 
 .box-2 {
-	background: #929292;
+	background: $menu;
 	display: flex;
 	flex-flow: column-reverse wrap;
 }
@@ -198,38 +198,36 @@ body {
 .eventtekst {
 	font-size: 26px;
 	line-height: 150%;
-//	color: red;
 }
 
 .eventtekst2 {
 	font-size: 20px;
 	line-height: 150%;
-	a:hover {
-		color: red;
-	}
-	a:visited {
-		color: black;
-	}
-	a:link {
-		color: black;
-	}
-	a:active {
-		color: red;
-	}
+	a {
+		&:hover {
+			color: red;
+		}
+		&:visited {
+			color: black;
+		}
+		&:link {
+			color: black;
+		}
+		&:active {
+			color: red;
+		}	
+	}	
 }
 	.aside-5 {
 	order: 2;
-	background: #ddd;
+	background: $baggrund;
 	width: 50px;
-	//	margin-top: 100px;
-	//height: 150px;	
 }
 
 .aside-6 {
 	order: 1;
-	background: #ddd;
+	background: $baggrund;
 	margin-top: 50px;
-	//margin-top: -200px;
 	display: flex;
 	flex-flow: column wrap;
 }
@@ -247,7 +245,7 @@ body {
 @media all and (min-width: 760px) {
   .aside {
 	  flex: 1 auto;
-	  margin-top: 100px;
+	  margin-top: $top;
 	}
 	
 	.aside-1 {
@@ -260,7 +258,6 @@ body {
 
 .box {
 	margin: auto;
-	//margin-top: 2.5em;
 	height: 200px;
 	width: 70%;
 	outline: solid black 2px;
@@ -268,26 +265,26 @@ body {
 }
 
 .box-1 {
-	margin-top: 100px;
-	background: #929292;
+	margin-top: $top;
+	background: $menu;
 	display: flex;
 	
 }
 
 .box-2 {
-	background: #929292;
+	background: $menu;
 	display: flex;
 	flex-flow: row wrap;
 }
 
 .info-2{
-	background: #929292;
+	background: $menu;
 	height: 100%;
 	width: 70%;
 }
 
 .pic-2{
-	background: #929292;
+	background: $menu;
 	margin: auto;
 	height: 50%;
 	width: 25%;
@@ -308,15 +305,14 @@ body {
 	
 		.aside-5 {
 	order: 1;
-	background: #ddd;
+	background: $baggrund;
 	width: 70%;
-			margin-top: 50px;
-	//height: 150px;	
+			margin-top: 50px;	
 }
 
 .aside-6 {
 	order: 2;
-	background: #ddd;
+	background: $baggrund;
 	display: flex;
 	margin-top: 50px;
 	flex-flow: column wrap;
@@ -329,14 +325,10 @@ body {
 }
 
 @media all and (min-width: 1100px) {
-	 // .aside { flex: 1 auto; }
- // .aside-1 { order: 1; } 
-  //.aside-2 { order: 2; }
-  //.footer  { order: 3; }
 	
 	//Events.php
 	.aside {
-		margin-top: 100px;
+		margin-top: $top;
 	}
 	
 	.aside-1 {
@@ -344,7 +336,7 @@ body {
 	}
 	
 	.aside-3 {
-		margin-top: 100px;
+		margin-top: $top;
 		padding: 10px;
 		width: 100%;
 		background: green;
@@ -352,6 +344,13 @@ body {
 	.header {
 			min-height: 110px;
 	max-height: 110px;
+	}
+	
+	#tabs {
+		margin-top: 40px;
+		li {
+			font-size: 150%;
+		}
 	}
 	
 	.logo {
@@ -368,7 +367,6 @@ body {
 	
 .box {
 	margin: auto;
-	//margin-top: 2.5em;
 	height: 200px;
 	width: 70%;
 	outline: solid black 2px;
@@ -377,39 +375,25 @@ body {
 
 .box-1 {
 	margin-top: 130px;
-	background: #929292;
+	background: $menu;
 	display: flex;
 	flex-flow: row wrap;
 }
 
 .box-2 {
-	background: #929292;
+	background: $menu;
 	display: flex;
 	flex-flow: row wrap;
 }
-/*	
-	.info-1 {
-		background: red;
-		height: 100%;
-		width: 70%;
-	}
-	
-	.pic-1  {
-		background: orange;
-		margin: auto;	
-		height: 50%;
-			width: 25%;
-	}*/
 
 .info-2{
-	background: #929292;
+	background: $menu;
 	height: 100%;
 	width: 70%;
 }
 
 .pic-2{
-	background: #929292;
-	//margin: auto -20px auto auto;
+	background: $menu;
 	margin: auto;
 	height: 50%;
 	width: 25%;
@@ -430,16 +414,15 @@ body {
 
 .aside-5 {
 	orer: 1;
-	background: #ddd;
+	background: $baggrund;
 	width: 70%;
-	margin-top: 100px;
-	//height: 150px;	
+	margin-top: $top;	
 }
 
 .aside-6 {
 	order: 2;
-	background: #ddd;
-	margin-top: 100px;
+	background: $baggrund;
+	margin-top: $top;
 }
 
 	.profilbillede{

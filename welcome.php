@@ -45,6 +45,11 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 
 		</aside>
 		<aside class="aside aside-4"></aside>
-		<footer class="footer">Dette er en skole produktion.</footer>
+		<footer class="footer">Dette er en skole produktion.<br>
+										  <img class="footerbillede" src="pics/Play Store.svg">
+	  <img class="footerbillede" src="pics/App Store.svg">
+<h2 class="opmeddig">
+	<b>Besøg vores <a  href="https://www.facebook.com/LocalPlay-1493651227418646/">Facebook</a></b>
+		</footer>
 </body>
 </html>

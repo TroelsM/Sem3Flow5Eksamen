@@ -1,67 +1,67 @@
 <?php
-// Include config file
+// Inkluder vores config fil
 require_once 'config.php';
  
-// Define variables and initialize with empty values
+// Definer tomme variabler
 $username = $password = "";
 $username_err = $password_err = "";
  
-// Processing form data when form is submitted
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username is empty
+    // Tjek om brugernavnsfeltet er tomt
     if(empty(trim($_POST["username"]))){
         $username_err = 'Please enter username.';
     } else{
         $username = trim($_POST["username"]);
     }
     
-    // Check if password is empty
+    // Tjek om kodefeltet er tomt
     if(empty(trim($_POST['password']))){
         $password_err = 'Please enter your password.';
     } else{
         $password = trim($_POST['password']);
     }
     
-    // Validate credentials
+    // bekræft indtastede
     if(empty($username_err) && empty($password_err)){
-        // Prepare a select statement
+        // Forbered en SELECT statement
         $sql = "SELECT username, password FROM users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
+            // Bind varable til det forberedte statement som parametre
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
-            // Set parameters
+            // Set parametre
             $param_username = $username;
             
-            // Attempt to execute the prepared statement
+            // Forsøg på at køre det forberedte statement
             if(mysqli_stmt_execute($stmt)){
-                // Store result
+                // Gem resultat
                 mysqli_stmt_store_result($stmt);
                 
-                // Check if username exists, if yes then verify password
+                // Tjek om brugernavnet eksistere - hvis ja, så bekræft koden.
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    // Bind result variables
+                    // Bind resultatet til variable
                     mysqli_stmt_bind_result($stmt, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
-                            /* Password is correct, so start a new session and
-                            save the username to the session */
+                            /* Koden er korrekt, så start en ny session og<br>
+							gem brugernavnet til sessionen */
                             session_start();
                             $_SESSION['username'] = $username;      
                             header("location: welcome.php");
                         } else{
-                            // Display an error message if password is not valid
-                            $password_err = 'The password you entered was not valid.';
+                            // Vis en fejl hvis koden er inkorrekt
+                            $password_err = 'Koden du skrev er ikke korrekt.';
                         }
                     }
                 } else{
-                    // Display an error message if username doesn't exist
-                    $username_err = 'No account found with that username.';
+                    // Vis en fejl hvis brugernavn ikke eksistere
+                    $username_err = 'Ingen bruger fundet med det brugernavn.';
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Ups! Noget gik galt. Venligst prøv igen senere.";
             }
         }
         
@@ -88,9 +88,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	  <a href="index.php"> <img class="logo" src="pics/localplay.png" alt="Logo"></a>
 		                       <p>Ikke oprettet? Opret dig <a href="index.php">her!</a>.</p>
 		</header>
-<!--  <article class="main">
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
-  </article>-->
   <aside class="aside aside-1">
 	  
 	  		Elsker du også hyggeaftener
@@ -114,16 +111,16 @@ Så er du kommet til det rigtige sted!<br>
       <h2>Log ind</h2>
         <p>Udfyld her for at logge på.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+            <div class="formen <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <input type="text" placeholder="Brugernavn" name="username"class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div class="formen <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <input type="password" placeholder="Kodeord"name="password" class="form-control">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
+            <div class="formen">
+                <input type="submit" class="btn btn-primary" value="Log ind">
             </div>
             <p>Ikke oprettet? Opret dig <a href="index.php">her</a>.</p>
         </form>
@@ -138,7 +135,9 @@ Så er du kommet til det rigtige sted!<br>
 	  </h2>
 		</aside>
 		
-  <footer class="footer">Dette er en skole produktion.</footer>
+  <footer class="footer">Dette er en skole produktion.
+
+		</footer>
 </div>
 </body>
 </html>

@@ -76,7 +76,12 @@ og dine overskydende skillinger og gør klar til kampen om aftenens trone (og ge
 			</div>
 			<div class="pic pic-2"><a href="#"><img src="pics/sidstekvinde.jpg" class="pics" alt="pepsilogo"></a></div>
 		</aside>
-	  <footer class="footer">Dette er en skole produktion </footer>
+	  		<footer class="footer">Dette er en skole produktion.<br>
+										  <img class="footerbillede" src="pics/Play Store.svg">
+	  <img class="footerbillede" src="pics/App Store.svg">
+<h2 class="opmeddig">
+	<b>Besøg vores <a  href="https://www.facebook.com/LocalPlay-1493651227418646/">Facebook</a></b>
+		</footer>
 		   </div>
 </body>
 </html>
